@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Guest Internet Access Training Simulation</title>
+
+<style>
+
+:root{
+    --navy:#0f1f3d;
+    --blue:#123f72;
+    --accent:#0d63c8;
+    --bg:#eef2f7;
+    --text:#1f2937;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    background:linear-gradient(180deg,#eef2f7 0%,#e5ebf3 100%);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.training-banner{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background:#fff5c4;
+    border-bottom:1px solid #e8d77a;
+    text-align:center;
+    padding:8px;
+    font-size:12px;
+    font-weight:600;
+    color:#6f5200;
+    z-index:100;
+}
+
+.container{
+    width:100%;
+    max-width:520px;
+}
+
+.card{
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 25px 60px rgba(0,0,0,0.15);
+}
+
+.hero{
+    height:180px;
+    background:
+      linear-gradient(rgba(5,15,35,.45),rgba(5,15,35,.45)),
+      url('https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&auto=format&fit=crop');
+    background-size:cover;
+    background-position:center;
+}
+
+.header{
+    background:linear-gradient(135deg,var(--navy),var(--blue));
+    color:white;
+    padding:28px;
+}
+
+.hotel-name{
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.hotel-tag{
+    margin-top:6px;
+    color:#d5e5ff;
+    font-size:15px;
+}
+
+.network{
+    margin-top:22px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    padding:14px 18px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.connected{
+    background:#2d8f68;
+    color:white;
+    padding:5px 12px;
+    border-radius:999px;
+    font-size:12px;
+    font-weight:600;
+}
+
+.content{
+    padding:34px;
+}
+
+.title{
+    font-size:28px;
+    font-weight:700;
+    color:var(--text);
+}
+
+.subtitle{
+    margin-top:8px;
+    margin-bottom:28px;
+    color:#62708a;
+    line-height:1.6;
+}
+
+.row{
+    display:flex;
+    gap:14px;
+}
+
+.field{
+    flex:1;
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:600;
+    color:#344256;
+}
+
+input{
+    width:100%;
+    padding:14px;
+    border-radius:14px;
+    border:1px solid #d4dce7;
+    background:#f8fafc;
+    font-size:15px;
+}
+
+.button{
+    width:100%;
+    border:none;
+    border-radius:16px;
+    padding:16px;
+    margin-top:10px;
+    background:var(--accent);
+    color:white;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.button:hover{
+    background:#0b58b1;
+}
+
+.notice{
+    margin-top:16px;
+    font-size:12px;
+    color:#93a0b5;
+    text-align:center;
+}
+
+.result{
+    display:none;
+    padding:32px;
+}
+
+.result h2{
+    margin-top:0;
+    color:#123f72;
+}
+
+.learn{
+    background:#f6f9fd;
+    border-left:4px solid #0d63c8;
+    border-radius:10px;
+    padding:14px;
+    margin-bottom:12px;
+}
+
+.footer{
+    text-align:center;
+    padding:18px;
+    color:#94a3b8;
+    font-size:12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="training-banner">
+    SECURITY AWARENESS TRAINING • NO INFORMATION IS STORED OR TRANSMITTED
+</div>
+
+<div class="container">
+
+    <div class="card">
+
+        <div id="portal">
+
+            <div class="hero"></div>
+
+            <div class="header">
+
+                <div class="hotel-name">
+                    GRAND HARBOUR HOTEL
+                </div>
+
+                <div class="hotel-tag">
+                    Complimentary Guest Wi-Fi Access
+                </div>
+
+                <div class="network">
+                    <span>Wi-Fi: Grand_Harbour_Guest</span>
+                    <span class="connected">Connected</span>
+                </div>
+
+            </div>
+
+            <div class="content">
+
+                <div class="title">
+                    Welcome
+                </div>
+
+                <div class="subtitle">
+                    Activate internet access for your stay and review this awareness exercise.
+                </div>
+
+                <div class="row">
+
+                    <div class="field">
+                        <label>Room Number</label>
+                        <input placeholder="1208">
+                    </div>
+
+                    <div class="field">
+                        <label>Surname</label>
+                        <input placeholder="Guest surname">
+                    </div>
+
+                </div>
+
+                <div class="field">
+                    <label>Email Address</label>
+                    <input placeholder="name@example.com">
+                </div>
+
+                <!-- <button class="button" onclick="showResult()">
+                    Activate Internet Access
+                </button> -->
+                
+                <button class="button" onclick="window.location.href='https://htmlpreview.github.io/?https://raw.githubusercontent.com/i-am-a-fake/microsoft-login-clone/refs/heads/main/index.html';">
+        Proceed to enable Wi-Fi access
+                </button>
+
+                <div class="notice">
+                    By continuing you acknowledge the guest internet acceptable use policy.
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="result" class="result">
+
+            <h2>Training Moment</h2>
+
+            <p>
+                This page is part of a security awareness exercise.
+                No information entered on this page was transmitted, stored, or processed.
+            </p>
+
+            <div class="learn">
+                <strong>Verify public Wi‑Fi networks</strong><br>
+                Confirm the network name with staff before connecting.
+            </div>
+
+            <div class="learn">
+                <strong>Be cautious with requests for credentials</strong><br>
+                Guest Wi‑Fi portals rarely need more than basic stay verification.
+            </div>
+
+            <div class="learn">
+                <strong>Use a VPN when travelling</strong><br>
+                Establish your corporate VPN before accessing work resources on public networks.
+            </div>
+
+            <button class="button" onclick="location.reload()">
+                Restart Exercise
+            </button>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Fictional hotel brand • Security awareness exercise
+    </div>
+
+</div>
+
+<script>
+
+// function showResult() {
+//     document.getElementById('portal').style.display = 'none';
+//     document.getElementById('result').style.display = 'block';
+
+
+// }
+
+</script>
+
+</body>
+</html>
